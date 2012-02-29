@@ -15,12 +15,13 @@ extern "C" {
 }
 #endif
 
-#pragma pack(1)
+#pragma pack(push, 1)
 typedef struct _KEY {
 	unsigned char SomeBytes[16];
 	unsigned char SomeCount;
 	unsigned int  CipherText[2];
 } KEY, *LPKEY;
+#pragma pack(pop)
 
 unsigned char table[256] = {
 	0xFA, 0xFA, 0x7D, 0x7D, 0xDB, 0xD7, 0xF3, 0x6F,
